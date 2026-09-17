@@ -1,0 +1,2 @@
+While working on this assignment, I learned how to build a basic Django project from the beginning. I learned how to create models for products and boxes and how to manage the data using Django Admin.
+I also learned how to connect views, URLs, and HTML templates to make the application work properly. I understood how to compare product dimensions and weight with the box size and weight capacity to find a suitable box.
