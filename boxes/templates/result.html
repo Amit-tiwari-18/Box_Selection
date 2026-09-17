@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Box Recommendation</h1>
+
+<h2>Product</h2>
+
+<p><strong>Name:</strong> {{ product.name }}</p>
+<p><strong>Dimensions:</strong>
+    {{ product.length }} ×
+    {{ product.width }} ×
+    {{ product.height }} cm
+</p>
+<p><strong>Weight:</strong> {{ product.weight }} kg</p>
+
+
+{% if recommended_box %}
+
+    <h2>Recommended Box</h2>
+
+    <div class="result-box">
+
+        <h3>{{ recommended_box.name }}</h3>
+
+        <p>
+            <strong>Dimensions:</strong>
+            {{ recommended_box.length }} ×
+            {{ recommended_box.width }} ×
+            {{ recommended_box.height }} cm
+        </p>
+
+        <p>
+            <strong>Maximum Weight:</strong>
+            {{ recommended_box.max_weight }} kg
+        </p>
+
+        <p>
+            <strong>Cost:</strong>
+            ₹{{ recommended_box.cost }}
+        </p>
+
+        <p>✓ Product dimensions fit</p>
+        <p>✓ Product weight fits</p>
+
+    </div>
+
+{% else %}
+
+    <h2>No Suitable Box Available</h2>
+
+    <p>
+        No available box can contain this product
+        within its dimension and weight limits.
+    </p>
+
+{% endif %}
+
+<br>
+
+<a href="/recommend/">Try Another Product</a>
+
+{% endblock %}

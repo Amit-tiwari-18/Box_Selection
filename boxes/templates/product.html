@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Find Suitable Box</h1>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label>Select Product</label>
+
+    <select name="product" required>
+        <option value="">-- Select Product --</option>
+
+        {% for product in products %}
+            <option value="{{ product.id }}">
+                {{ product.name }}
+            </option>
+        {% endfor %}
+    </select>
+
+    <br><br>
+
+    <button type="submit">Find Box</button>
+</form>
+
+{% endblock %}
